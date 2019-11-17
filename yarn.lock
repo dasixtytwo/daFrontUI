@@ -5158,6 +5158,27 @@ neo-async@^2.5.0, neo-async@^2.6.0, neo-async@^2.6.1:
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.1.tgz#ac27ada66167fa8849a6addd837f6b189ad2081c"
   integrity sha512-iyam8fBuCUpWeKPGpaNMetEocMt364qkCsfL9JuhjXX6dRnguRVOfk2GZaDpPjcOKiiXCPINZC1GczQ7iTq3Zw==
 
+ngx-owl-carousel-o@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/ngx-owl-carousel-o/-/ngx-owl-carousel-o-2.0.1.tgz#3cbe07a434fc1f3140b1d28c7b3e6a9d44c0aa1a"
+  integrity sha512-LIMf86kNkq4nxgYXIovV950pYYStQYNHY+vYXugCGY5uxmzNd1jeu3PpGMB7VNmH925od7Ujr+F04kR1wBDxpw==
+  dependencies:
+    tslib "^1.9.0"
+
+ngx-page-scroll-core@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/ngx-page-scroll-core/-/ngx-page-scroll-core-7.0.0.tgz#2f5967a680a78a164944d4e6b3b4214d79b5a757"
+  integrity sha512-RRKKsGmat+wkhrE69hLl/KmWloAnsnGKzIx3Lb9eIIOQSXvxo0aJZ+iNcfLT1vS8P6gn+u8URIOKfqHEWPdykA==
+  dependencies:
+    tslib "^1.9.0"
+
+ngx-page-scroll@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/ngx-page-scroll/-/ngx-page-scroll-7.0.0.tgz#53a45bb6e5646e79157cca05f734d57bccf02c42"
+  integrity sha512-hILJhScEC+dXXR7S2vuMYtg/o9H/a+vGcqZiIi3iMlqdPyAHQJlJxXA3jcnyBifEI8/3hFtKIOb/5H4Prnl75w==
+  dependencies:
+    tslib "^1.9.0"
+
 nice-try@^1.0.4:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/nice-try/-/nice-try-1.0.5.tgz#a3378a7696ce7d223e88fc9b764bd7ef1089e366"

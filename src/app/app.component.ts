@@ -1,12 +1,20 @@
-import { Component } from '@angular/core';
-import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
 	selector: 'app',
 	templateUrl: './app.component.html',
 	styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-	title = 'daFrontUI';
-	faCoffee = faCoffee;
+export class AppComponent implements OnInit {
+	title = 'Home Page';
+	sections: Array<String> = ['about', 'services', 'gallery', 'blog', 'contact'];
+
+	constructor() {}
+
+	ngOnInit() {
+		const b = document.querySelector('body');
+		b.setAttribute('data-spy', 'scroll');
+		b.setAttribute('data-target', 'navbar');
+		b.setAttribute('data-offset', '100');
+	}
 }
