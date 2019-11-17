@@ -1,4 +1,32 @@
 <div class="wrapper">
-  <h2>DA Front-End Personal Page</h2>
-  <fa-icon [icon]="faCoffee"></fa-icon>
+  <!-- Header Nav Start -->
+  <header-nav></header-nav>
+  <!-- Header Nav End -->
+
+  <!-- Banner Start -->
+  <home-banner></home-banner>
+  <!-- Banner End -->
+
+  <!-- About Start -->
+  <!-- About End -->
+
+  <!-- Service Start -->
+  <!-- Service End -->
+
+  <!-- Gallery Start -->
+  <!-- Gallery End -->
+
+  <!-- Blog Start -->
+  <!-- Blog End -->
+
+  <!-- Contact Start -->
+  <!-- Contact End -->
+  <div *ngFor="let section of sections" [attr.id]='section'>
+    <h1>{{section}}</h1>
+    <div class="content">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt saepe exercitationem praesentium modi
+      repudiandae dicta consectetur ab veritatis quaerat quibusdam quod, dolorem fugit temporibus voluptas magni ad
+      odio, adipisci doloremque!
+    </div>
+  </div>
 </div>

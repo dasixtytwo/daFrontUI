@@ -19,7 +19,7 @@
 			["kebab-case", "camelCase"]
 		],
 		"import-blacklist": [true, "rxjs/Rx"],
-		"indent": [true, "tabs", 2],
+		"indent": false,
 		"interface-name": false,
 		"max-classes-per-file": false,
 		"max-line-length": [
@@ -55,7 +55,7 @@
 		"no-consecutive-blank-lines": false,
 		"no-console": [true, "debug", "info", "time", "timeEnd", "trace"],
 		"no-empty": false,
-		"no-inferrable-types": [true, "ignore-params"],
+		"no-inferrable-types": [true, "ignore-params", "ignore-properties"],
 		"no-non-null-assertion": true,
 		"no-redundant-jsdoc": false,
 		"no-switch-case-fall-through": true,
@@ -72,7 +72,7 @@
 		"no-angle-bracket-type-assertion": false,
 		"no-conflicting-lifecycle": true,
 		"no-host-metadata-property": true,
-		"no-input-rename": true,
+		"no-input-rename": false,
 		"no-inputs-metadata-property": true,
 		"no-output-native": true,
 		"no-output-on-prefix": true,
