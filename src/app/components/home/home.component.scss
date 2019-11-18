@@ -1,0 +1,12 @@
+#prlxBanner {
+	position: fixed;
+	z-index: -100;
+	top: 0px;
+	left: 0px;
+	overflow: hidden;
+	transform: translate3d(0px, 0px, 0px);
+	height: 997px;
+	width: 1920px;
+	background-image: url(assets/img/banner/bg2.jpg);
+	background-position-y: 0px;
+}
