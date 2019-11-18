@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, HostListener, Inject } from '@angular/core';
 import { PageScrollService } from 'ngx-page-scroll-core';
 import { DOCUMENT } from '@angular/common';
 
@@ -29,5 +29,18 @@ export class HeaderComponent implements OnInit {
 			document: this.document,
 			scrollTarget: '.wrapper'
 		});
+	}
+
+	@HostListener('window:scroll', ['$event'])
+	onWindowScroll(e) {
+		if (window.pageYOffset > 100) {
+			// tslint:disable-next-line: prefer-const
+			let element = document.querySelector('body');
+			element.classList.add('scrolled');
+		} else {
+			// tslint:disable-next-line: prefer-const
+			let element = document.querySelector('body');
+			element.classList.remove('scrolled');
+		}
 	}
 }

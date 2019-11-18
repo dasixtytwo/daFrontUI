@@ -11,7 +11,12 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
-import { HomeComponent } from './components/home/home/home.component';
+import { HomeComponent } from './components/home/home.component';
+import { AboutComponent } from './components/about/about.component';
+import { ServicesComponent } from './components/services/services.component';
+import { GalleryComponent } from './components/gallery/gallery.component';
+import { BlogComponent } from './components/blog/blog.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 @NgModule({
 	imports: [
@@ -23,7 +28,17 @@ import { HomeComponent } from './components/home/home/home.component';
 		NgbModule,
 		AppRoutingModule
 	],
-	declarations: [AppComponent, ParallaxDirective, HeaderComponent, HomeComponent],
+	declarations: [
+		AppComponent,
+		ParallaxDirective,
+		HeaderComponent,
+		HomeComponent,
+		AboutComponent,
+		ServicesComponent,
+		GalleryComponent,
+		BlogComponent,
+		ContactComponent
+	],
 	providers: [],
 	bootstrap: [AppComponent]
 })

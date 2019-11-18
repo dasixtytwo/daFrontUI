@@ -7,7 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
 	title = 'Home Page';
-	sections: Array<String> = ['about', 'services', 'gallery', 'blog', 'contact'];
 
 	constructor() {}
 

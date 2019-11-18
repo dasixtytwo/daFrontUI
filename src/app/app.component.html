@@ -8,25 +8,39 @@
   <!-- Banner End -->
 
   <!-- About Start -->
+  <app-about></app-about>
   <!-- About End -->
 
   <!-- Service Start -->
+  <app-services></app-services>
   <!-- Service End -->
 
   <!-- Gallery Start -->
+  <app-gallery></app-gallery>
   <!-- Gallery End -->
 
   <!-- Blog Start -->
+  <app-blog></app-blog>
   <!-- Blog End -->
 
   <!-- Contact Start -->
+  <app-contact></app-contact>
   <!-- Contact End -->
-  <div *ngFor="let section of sections" [attr.id]='section'>
-    <h1>{{section}}</h1>
-    <div class="content">
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt saepe exercitationem praesentium modi
-      repudiandae dicta consectetur ab veritatis quaerat quibusdam quod, dolorem fugit temporibus voluptas magni ad
-      odio, adipisci doloremque!
+  <!-- Footer Area Start -->
+  <div id="footer">
+    <div class="container">
+      <!-- Footer Copyright Start -->
+      <div class="footer--copyright">
+        <p>Copyright &copy; 2019 <a href="http://davideagosti.me">DA</a>. All Rights Reserved.</p>
+      </div>
+      <!-- Footer Copyright End -->
     </div>
   </div>
+  <!-- Footer Area End -->
+
+  <!-- Back To Top Area Start -->
+  <div id="backToTop">
+    <a pageScroll [routerLink]="['home']" href="#banner" class="btn--default"><i class="fa fa-angle-up"></i></a>
+  </div>
+  <!-- Back To Top Area End -->
 </div>
