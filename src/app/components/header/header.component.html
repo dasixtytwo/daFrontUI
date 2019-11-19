@@ -30,7 +30,7 @@
             <li class="nav-item" *ngFor="let section of sections" [class.active]="clicked === section"
               (click)="clicked = section">
               <a pageScroll [pageScrollOffset]=" 92" [routerLink]="['home']" href="{{'#' + section}}"
-                (click)="haderNav = true">{{section}}</a>
+                (click)="headerNav = true">{{section}}</a>
             </li>
           </ul>
         </div>
