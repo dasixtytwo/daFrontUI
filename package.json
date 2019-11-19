@@ -4,12 +4,14 @@
 	"scripts": {
 		"commit": "git-cz",
 		"ng": "ng",
-		"start": "ng serve",
+		"start": "node server.js",
+		"start-ng": "ng serve",
 		"build": "ng build",
 		"test": "ng test",
 		"lint": "ng lint",
 		"e2e": "ng e2e",
 		"build:stats": "ng build --stats-json",
+		"postinstall": "ng build --aot -prod",
 		"analyze": "webpack-bundle-analyzer dist/daAdminUI/stats-es2015.json"
 	},
 	"private": true,
@@ -56,5 +58,9 @@
 		"tslint": "~5.15.0",
 		"typescript": "~3.5.3",
 		"webpack-bundle-analyzer": "^3.6.0"
+	},
+	"engines": {
+		"node": "12.10.0",
+		"npm": "6.11.3"
 	}
 }
