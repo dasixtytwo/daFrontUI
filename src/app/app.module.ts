@@ -10,6 +10,8 @@ import { ParallaxDirective } from '@theme/directives/parallax.directive';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BackToTopComponent } from '@theme/components/backtop/back-to-top.component';
 
+import { SharedModule } from '@theme/shared.module';
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
@@ -27,7 +29,8 @@ import { ContactComponent } from './components/contact/contact.component';
 		FontAwesomeModule,
 		RouterModule,
 		NgbModule,
-		AppRoutingModule
+		AppRoutingModule,
+		SharedModule
 	],
 	declarations: [
 		AppComponent,
