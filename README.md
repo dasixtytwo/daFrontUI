@@ -50,7 +50,11 @@ ng serve
 # Server runs on http://localhost:4200
 
 # Run the Express server (follow the READ Me Phase I on  daNodepi project)
-npm run server
+npm start
+
+# or
+
+yarn start
 
 # Server runs on http://localhost:3000
 ```
