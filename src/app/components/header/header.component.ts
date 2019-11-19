@@ -16,6 +16,7 @@ export class HeaderComponent implements OnInit {
 		'blog',
 		'contact'
 	];
+	selected: any;
 
 	public headerNav = true;
 
@@ -23,6 +24,13 @@ export class HeaderComponent implements OnInit {
 		private pageScrollService: PageScrollService,
 		@Inject(DOCUMENT) private document: any
 	) {}
+
+	select(item) {
+		this.selected = item;
+	}
+	isActive(item) {
+		return this.selected === item;
+	}
 
 	ngOnInit() {
 		this.pageScrollService.scroll({
@@ -33,7 +41,7 @@ export class HeaderComponent implements OnInit {
 
 	@HostListener('window:scroll', ['$event'])
 	onWindowScroll(e) {
-		if (window.pageYOffset > 100) {
+		if (window.pageYOffset > 1) {
 			// tslint:disable-next-line: prefer-const
 			let element = document.querySelector('body');
 			element.classList.add('scrolled');
