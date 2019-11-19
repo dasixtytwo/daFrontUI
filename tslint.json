@@ -68,6 +68,7 @@
 		"ordered-imports": false,
 		"quotemark": [true, "single"],
 		"typedef": [false, "call-signature", "property-declaration"],
+		"only-arrow-functions": false,
 		"trailing-comma": false,
 		"no-angle-bracket-type-assertion": false,
 		"no-conflicting-lifecycle": true,

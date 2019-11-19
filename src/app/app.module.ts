@@ -8,6 +8,7 @@ import { NgxPageScrollModule } from 'ngx-page-scroll';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ParallaxDirective } from '@theme/directives/parallax.directive';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BackToTopComponent } from '@theme/components/backtop/back-to-top.component';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -37,7 +38,8 @@ import { ContactComponent } from './components/contact/contact.component';
 		ServicesComponent,
 		GalleryComponent,
 		BlogComponent,
-		ContactComponent
+		ContactComponent,
+		BackToTopComponent
 	],
 	providers: [],
 	bootstrap: [AppComponent]
