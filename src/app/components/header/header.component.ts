@@ -25,7 +25,7 @@ export class HeaderComponent implements OnInit {
 		@Inject(DOCUMENT) private document: any
 	) {}
 
-	select(item) {
+	clicked(item) {
 		this.selected = item;
 	}
 	isActive(item) {
