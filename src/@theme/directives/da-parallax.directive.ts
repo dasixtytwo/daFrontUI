@@ -9,7 +9,7 @@ import {
 declare var $: any;
 
 @Directive({
-	selector: '[ngParallax]'
+	selector: '[daParallax]'
 })
 export class DaParallaxDirective implements OnInit {
 	// Options for directive imgSrc="path-to-your-image" imgHeight="70vh" bgSize="cover" bgPosition="50% 0" [ratio]="-0.4"
