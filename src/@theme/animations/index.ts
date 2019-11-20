@@ -36,5 +36,25 @@ const customAnimation = animation(
 );
 
 export const themeAnimations = [
-	trigger('animate', [transition('void => *', [useAnimation(customAnimation)])])
+	trigger('animate', [
+		transition('void => *', [useAnimation(customAnimation)])
+	]),
+	trigger('openClose', [
+		state(
+			'open',
+			style({
+				width: '*',
+				opacity: '1'
+			})
+		),
+		state(
+			'closed',
+			style({
+				width: '0px',
+				opacity: '0'
+			})
+		),
+		transition('open => closed', [animate('0.5s')]),
+		transition('closed => open', [animate('0.5s')])
+	])
 ];

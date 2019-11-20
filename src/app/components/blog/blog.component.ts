@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { themeAnimations } from '@theme/animations/index';
 import {
 	faIndent,
 	faCalendar,
@@ -14,7 +15,8 @@ import {
 @Component({
 	selector: 'app-blog',
 	templateUrl: './blog.component.html',
-	styleUrls: ['./blog.component.scss']
+	styleUrls: ['./blog.component.scss'],
+	animations: themeAnimations
 })
 export class BlogComponent implements OnInit {
 	faIndent = faIndent;
@@ -25,7 +27,13 @@ export class BlogComponent implements OnInit {
 	faGooglePlus = faGooglePlus;
 	faLinkedin = faLinkedin;
 
+	show = true;
+
 	constructor() {}
 
 	ngOnInit() {}
+
+	toggleShow() {
+		this.show = !this.show;
+	}
 }
