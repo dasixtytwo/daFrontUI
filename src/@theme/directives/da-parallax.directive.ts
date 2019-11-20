@@ -11,26 +11,26 @@ declare var $: any;
 @Directive({
 	selector: '[ngParallax]'
 })
-export class ParallaxDirective implements OnInit {
+export class DaParallaxDirective implements OnInit {
 	// Options for directive imgSrc="path-to-your-image" imgHeight="70vh" bgSize="cover" bgPosition="50% 0" [ratio]="-0.4"
 	@Input() imgSrc: string;
 	@Input() imgHeight: String = '100vh';
 	@Input() bgPosition: String = '50% 0';
 	@Input() bgSize: String = 'cover';
 	@Input() bgAttachment: String = 'fixed';
-	@Input('ratio') parallaxRatio: number = -0.4;
+	@Input('speed') speed: number = -0.4;
 	screenHeight: any;
 	screenWidth: any;
 
 	constructor(private renderer: Renderer2, private hostElement: ElementRef) {}
 
-	@HostListener('window:resize', ['$event'])
+	@HostListener('window:resize', [])
 	ngOnInit() {
 		this.init();
 		this.getScreenSize();
 	}
 
-	getScreenSize(event?) {
+	getScreenSize() {
 		this.screenWidth = window.innerWidth - 100;
 		const elem = this.hostElement.nativeElement;
 		if (this.screenWidth <= 1024) {
@@ -56,15 +56,15 @@ export class ParallaxDirective implements OnInit {
 		this.renderer.setStyle(elem, '-moz-transform', 'translate3d(0, 0, 0)');
 		this.renderer.setStyle(elem, '-webkit-transform', 'translate3d(0, 0, 0)');
 		this.renderer.setStyle(elem, 'transform', 'translate3d(0, 0, 0)');
-		this.renderer.setStyle(elem, 'ratio', this.parallaxRatio);
+		this.renderer.setStyle(elem, 'speed', this.speed);
 
 		$(function() {
 			const $el = $(elem);
-			const ratio = $el[0].style.ratio;
+			const speed = $el[0].style.speed;
 			$(window).on('scroll', function() {
 				const scroll = $(window).scrollTop();
 				$el.css({
-					'background-position': '50% ' + ratio * scroll + 'px'
+					'background-position': '50% ' + speed * scroll + 'px'
 				});
 			});
 		});
