@@ -7,12 +7,12 @@
     <!-- Section Title End -->
 
     <div class="blog--quick-nav clearfix">
-      <button class="toggle--btn btn--default">
+      <button class="toggle--btn btn--default" (click)="toggleShow()">
         <fa-icon [icon]="faIndent"></fa-icon>
       </button>
 
       <!-- Posts Filter Menu Start -->
-      <div class="posts-filter-menu">
+      <div class="posts-filter-menu" [@openClose]="show ? 'open' : 'closed'">
         <ul>
           <li><a href="*">All</a></li>
           <li><a href="ux-design">UX Design</a></li>
