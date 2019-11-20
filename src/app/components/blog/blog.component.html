@@ -7,22 +7,18 @@
     <!-- Section Title End -->
 
     <div class="blog--quick-nav clearfix">
-      <button class="toggle--btn btn--default"><i class="fa fa-indent"></i></button>
+      <button class="toggle--btn btn--default">
+        <fa-icon [icon]="faIndent"></fa-icon>
+      </button>
 
       <!-- Posts Filter Menu Start -->
       <div class="posts-filter-menu">
         <ul>
           <li><a href="*">All</a></li>
           <li><a href="ux-design">UX Design</a></li>
-          <li><a href="ui-design">UI Design</a></li>
-          <li><a href="usability">Usability</a></li>
-          <li><a href="interaction-design">Intarection Design</a></li>
-          <li><a href="logo-design">Logo Design</a></li>
-          <li><a href="illustration">Illustration</a></li>
-          <li><a href="typography">Typography</a></li>
+          <li><a href="react">React</a></li>
           <li><a href="freelancing">Freelancing</a></li>
-          <li><a href="research">Research</a></li>
-          <li><a href="usability">Publishing</a></li>
+          <li><a href="application">Application</a></li>
         </ul>
       </div>
       <!-- Posts Filter Menu End -->
@@ -31,13 +27,15 @@
     <!-- Post Items Start -->
     <div class="row post-items">
       <!-- Post Item Start -->
-      <div class="col-sm-4 col-md-3 post-item" data-cat="web mobile">
+      <div class="col-sm-4 col-md-3 post-item" data-cat="application">
         <!-- Post Description Start -->
         <div class="post-description">
           <h2><a href="#postDetails" data-toggle="modal">LOREM <strong>IPSUM</strong> (UI)
-              <strong>Design</strong></a></h2>
+              <strong>Mobile Apps</strong></a></h2>
 
-          <p class="post-date"><i class="fa fa-calendar"></i> <a href="#">28 Dec 2019</a></p>
+          <p class="post-date">
+            <fa-icon [icon]="faCalendar"></fa-icon> <a href="#"> 28 Dec 2019</a>
+          </p>
 
           <p class="post-description-content">I’m a freelance Web Developer &amp; an all round good guy, building
             awesome
@@ -66,13 +64,15 @@
       <!-- Post Item End -->
 
       <!-- Post Item Start -->
-      <div class="col-sm-4 col-md-3 post-item" data-cat="javascript">
+      <div class="col-sm-4 col-md-3 post-item" data-cat="freelancing">
         <!-- Post Description Start -->
         <div class="post-description">
           <h2><a href="#postDetails" data-toggle="modal">LOREM <strong>IPSUM</strong> (UI)
-              <strong>UI</strong></a></h2>
+              <strong>APPS</strong></a></h2>
 
-          <p class="post-date"><i class="fa fa-calendar"></i> <a href="#">28 Dec 2019</a></p>
+          <p class="post-date">
+            <fa-icon [icon]="faCalendar"></fa-icon> <a href="#"> 28 Dec 2019</a>
+          </p>
 
           <p class="post-description-content">I’m a freelance Web Developer &amp; an all round good guy, building
             awesome
@@ -107,7 +107,9 @@
           <h2><a href="#postDetails" data-toggle="modal">LOREM <strong>IPSUM</strong> (UI)
               <strong>React</strong></a></h2>
 
-          <p class="post-date"><i class="fa fa-calendar"></i> <a href="#">28 Dec 2019</a></p>
+          <p class="post-date">
+            <fa-icon [icon]="faCalendar"></fa-icon> <a href="#"> 28 Dec 2019</a>
+          </p>
 
           <p class="post-description-content">I’m a freelance Web Developer &amp; an all round good guy, building
             awesome
@@ -142,7 +144,9 @@
           <h2><a href="#postDetails" data-toggle="modal">LOREM <strong>IPSUM</strong> (UI)
               <strong>Angular</strong></a></h2>
 
-          <p class="post-date"><i class="fa fa-calendar"></i> <a href="#">28 Dec 2019</a></p>
+          <p class="post-date">
+            <fa-icon [icon]="faCalendar"></fa-icon> <a href="#"> 28 Dec 2019</a>
+          </p>
 
           <p class="post-description-content">I’m a freelance Web Developer &amp; an all round good guy, building
             awesome
@@ -199,11 +203,21 @@
           <!-- Social Links Start -->
           <div class="social-icons">
             <ul>
-              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-              <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-              <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-              <li><a href="#"><i class="fa fa-envelope"></i></a></li>
+              <li><a href="#">
+                  <fa-icon [icon]="faFacebook"></fa-icon>
+                </a></li>
+              <li><a href="#">
+                  <fa-icon [icon]="faTwitter"></fa-icon>
+                </a></li>
+              <li><a href="#">
+                  <fa-icon [icon]="faGooglePlus"></fa-icon>
+                </a></li>
+              <li><a href="#">
+                  <fa-icon [icon]="faLinkedin"></fa-icon>
+                </a></li>
+              <li><a href="#">
+                  <fa-icon [icon]="faEnvelope"></fa-icon>
+                </a></li>
             </ul>
           </div>
           <!-- Social Links End -->
@@ -215,7 +229,9 @@
           <div class="row">
             <div class="col-md-offset-1 col-md-10 col-xs-offset-1 col-xs-10 reset-padding post-title">
               <h2><strong>The</strong> best <strong>UX</strong> technique <strong>in shopping</strong> website</h2>
-              <p><i class="fa fa-calendar"></i> 28 Dec, 2015</p>
+              <p>
+                <fa-icon [icon]="faCalendar"></fa-icon> 28 Dec, 2015
+              </p>
             </div>
 
             <div class="col-md-12">
