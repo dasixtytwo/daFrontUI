@@ -5,6 +5,7 @@ import {
 	Inject,
 	ViewEncapsulation
 } from '@angular/core';
+import { Spinkit } from './spinkits';
 import {
 	Router,
 	NavigationStart,
@@ -17,12 +18,17 @@ import { DOCUMENT } from '@angular/common';
 @Component({
 	selector: 'app-spinner',
 	templateUrl: './spinner.component.html',
-	styleUrls: ['./spinner.component.scss'],
+	styleUrls: [
+		'./spinner.component.scss',
+		'./spinkit-css/sk-cube-material.scss'
+	],
 	encapsulation: ViewEncapsulation.None
 })
 export class SpinnerComponent implements OnDestroy {
 	public isSpinnerVisible = true;
-	@Input() public backgroundColor = 'rgba(255, 255, 255, 0.8)';
+	public Spinkit = Spinkit;
+	@Input() public backgroundColor = 'rgba(236, 131, 11, 0.8)';
+	@Input() public spinner = Spinkit.skCubeGrid;
 	constructor(
 		private router: Router,
 		@Inject(DOCUMENT) private document: Document
