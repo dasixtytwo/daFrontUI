@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
 import { NgxPageScrollModule } from 'ngx-page-scroll';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { ParallaxDirective } from '@theme/directives/parallax.directive';
+import { DaParallaxDirective } from '@theme/directives/da-parallax.directive';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BackToTopComponent } from '@theme/components/backtop/back-to-top.component';
 
@@ -34,7 +34,7 @@ import { ContactComponent } from './components/contact/contact.component';
 	],
 	declarations: [
 		AppComponent,
-		ParallaxDirective,
+		DaParallaxDirective,
 		HeaderComponent,
 		HomeComponent,
 		AboutComponent,
