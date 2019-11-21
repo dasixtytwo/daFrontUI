@@ -1,0 +1,27 @@
+<!-- Gallery Details Modal Start -->
+<ng-template #childmodal let-modal>
+  <!-- Modal Content Start -->
+  <div class="modal-content gallery-details">
+    <!-- Modal Header Start -->
+    <div class="modal-header">
+      <span class="close" aria-label="Close" aria-hidden="true" (click)="modal.dismiss('Cross click')">&times;</span>
+
+      <h4 class="modal-title">{{this.dataProject.caption}}</h4>
+      <p>#{{this.dataProject.category}}</p>
+    </div>
+    <!-- Modal Header End -->
+
+    <!-- Modal Body Start -->
+    <div class="modal-body">
+      <img src="{{this.dataProject.url}}" alt="" />
+    </div>
+    <!-- Modal Body End -->
+
+    <!-- Modal Footer Start -->
+    <div class="modal-footer gallery--description">
+      <p>{{this.dataProject.description}}</p>
+    </div>
+    <!-- Modal Footer End -->
+  </div>
+  <!-- Modal Content End -->
+</ng-template>

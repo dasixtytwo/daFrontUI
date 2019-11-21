@@ -13,6 +13,8 @@ import { BackToTopComponent } from '@theme/components/backtop/back-to-top.compon
 
 import { SharedModule } from '@theme/shared.module';
 
+import { PortfolioService } from '@theme/services/portfolio/portfolio.service';
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
@@ -46,7 +48,7 @@ import { ContactComponent } from './components/contact/contact.component';
 		ContactComponent,
 		BackToTopComponent
 	],
-	providers: [],
+	providers: [PortfolioService],
 	bootstrap: [AppComponent]
 })
 export class AppModule {}

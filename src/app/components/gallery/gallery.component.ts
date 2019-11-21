@@ -1,20 +1,32 @@
-import { Component, OnInit } from '@angular/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Component, OnInit, Input, OnChanges, ViewChild } from '@angular/core';
+import { PortfolioService } from '@theme/services/portfolio/portfolio.service';
 import { faFileAlt } from '@fortawesome/free-solid-svg-icons';
+import { ModalBasicComponent } from '@theme/components/modal-basic/modal-basic.component';
 
 @Component({
 	selector: 'app-gallery',
 	templateUrl: './gallery.component.html',
 	styleUrls: ['./gallery.component.scss']
 })
-export class GalleryComponent implements OnInit {
+export class GalleryComponent implements OnChanges {
+	images: any[];
+	filterBy?: string = 'all';
+	visibleImages: any[] = [];
+
 	faFileAlt = faFileAlt;
 
-	constructor(private modalService: NgbModal) {}
+	@ViewChild(ModalBasicComponent, { static: false })
+	childModal: ModalBasicComponent;
 
-	open(modalId) {
-		this.modalService.open(modalId, { size: 'lg', backdrop: 'static' });
+	constructor(private portfolioService: PortfolioService) {
+		this.visibleImages = this.portfolioService.getImages();
 	}
 
-	ngOnInit() {}
+	open(objParams) {
+		this.childModal.open(objParams);
+	}
+
+	ngOnChanges() {
+		this.visibleImages = this.portfolioService.getImages();
+	}
 }
