@@ -20,7 +20,7 @@
     <div class="row gallery-items">
       <!-- Gallery Item Start -->
       <div class="col-xs-12 col-sm-4 col-md-3 thumbnail gallery-item" data-cat="website-item">
-        <img src="img/gallery-img/gallery-photo-1.png" alt="" />
+        <img src="assets/img/gallery/gallery-1.png" alt="" />
 
         <div class="gallery-overlay">
           <div class="vc--parent">
@@ -29,7 +29,7 @@
 
               <p>Lorem ipsum dolor sit amet con sectetur adipiscing elit sed do.</p>
 
-              <a href="#galleryDetails" class="btn gallery--window" data-toggle="modal">View Project</a>
+              <button class="btn gallery--window" (click)="open(website)">View Project</button>
             </div>
           </div>
         </div>
@@ -38,7 +38,7 @@
 
       <!-- Gallery Item Start -->
       <div class="col-xs-12 col-sm-4 col-md-3 thumbnail gallery-item" data-cat="application-item">
-        <img src="img/gallery-img/gallery-photo-4.png" alt="" />
+        <img src="assets/img/gallery/gallery-2.png" alt="" />
 
         <div class="gallery-overlay">
           <div class="vc--parent">
@@ -47,7 +47,7 @@
 
               <p>Lorem ipsum dolor sit amet con sectetur adipiscing elit sed do.</p>
 
-              <a href="#galleryDetails" class="btn gallery--window" data-toggle="modal">View Project</a>
+              <button class="btn gallery--window" (click)="open(website)">View Project</button>
             </div>
           </div>
         </div>
@@ -58,36 +58,33 @@
   </div>
 
   <!-- Gallery Details Modal Start -->
-  <div class="modal fade gallery--details" id="galleryDetails" role="dialog">
-    <div class="modal-dialog modal-lg">
-      <!-- Modal Content Start -->
-      <div class="modal-content">
-        <!-- Modal Header Start -->
-        <div class="modal-header">
-          <span class="close" data-dismiss="modal">&times;</span>
+  <ng-template #website let-modal>
+    <!-- Modal Content Start -->
+    <div class="modal-content gallery-details">
+      <!-- Modal Header Start -->
+      <div class="modal-header">
+        <span class="close" aria-label="Close" aria-hidden="true" (click)="modal.dismiss('Cross click')">&times;</span>
 
-          <h4 class="modal-title">PROJECT NAME</h4>
-          <p>#UX Design #UI Design #Prototype #Design #Identity</p>
-        </div>
-        <!-- Modal Header End -->
-
-        <!-- Modal Body Start -->
-        <div class="modal-body">
-          <img src="img/gallery-img/project-01.jpg" alt="" />
-        </div>
-        <!-- Modal Body End -->
-
-        <!-- Modal Footer Start -->
-        <div class="modal-footer gallery--description">
-          <p>Last time I created a full e-commerce web template for website owner who planning right now. In that
-            design, I followed all the rules of UX latest design techniques. After finished, I started a dashboard
-            design with the best experience for the adminstrator.</p>
-          <p>And finally, I finished the design.</p>
-        </div>
-        <!-- Modal Footer End -->
+        <h4 class="modal-title">PROJECT NAME</h4>
+        <p>#UX Design #UI Design #Prototype #Design #Identity</p>
       </div>
-      <!-- Modal Content End -->
+      <!-- Modal Header End -->
+
+      <!-- Modal Body Start -->
+      <div class="modal-body">
+        <img src="assets/img/gallery/gallery-1.png" alt="" />
+      </div>
+      <!-- Modal Body End -->
+
+      <!-- Modal Footer Start -->
+      <div class="modal-footer gallery--description">
+        <p>Last time I created a full e-commerce web template for website owner who planning right now. In that
+          design, I followed all the rules of UX latest design techniques. After finished, I started a dashboard
+          design with the best experience for the adminstrator.</p>
+        <p>And finally, I finished the design.</p>
+      </div>
+      <!-- Modal Footer End -->
     </div>
-  </div>
-  <!-- Gallery Details Modal End -->
+    <!-- Modal Content End -->
+  </ng-template>
 </div>
