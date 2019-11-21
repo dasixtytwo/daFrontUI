@@ -7,7 +7,7 @@ import { NgbModalRef, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 	styleUrls: ['./modal-basic.component.scss']
 })
 export class ModalBasicComponent implements OnInit {
-	public dataProject: object;
+	public dataProject: any;
 
 	private modalRef: NgbModalRef;
 	@ViewChild('childmodal', { static: false })
@@ -17,7 +17,7 @@ export class ModalBasicComponent implements OnInit {
 
 	ngOnInit() {}
 
-	open(project: object) {
+	open(project: any) {
 		this.dataProject = project;
 		this.modalRef = this.modalService.open(this.child, { size: 'lg' });
 		// this.modalRef.result.then(result => {}, () => {});
