@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { themeAnimations } from '@theme/animations/index';
 import {
 	faIndent,
@@ -29,11 +30,15 @@ export class BlogComponent implements OnInit {
 
 	show = true;
 
-	constructor() {}
+	constructor(private modalService: NgbModal) {}
 
-	ngOnInit() {}
+	open(modalId) {
+		this.modalService.open(modalId, { size: 'lg', backdrop: 'static' });
+	}
 
 	toggleShow() {
 		this.show = !this.show;
 	}
+
+	ngOnInit() {}
 }

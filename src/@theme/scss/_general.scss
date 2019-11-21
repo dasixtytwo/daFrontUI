@@ -1039,6 +1039,14 @@ body.scrolled {
 		display: block;
 	}
 }
+.img-responsive {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+.img-circle {
+	border-radius: 50%;
+}
 .post-meta-desc {
 	float: left;
 	h3 {
