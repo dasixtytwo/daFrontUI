@@ -1,0 +1,68 @@
+<!-- Gallery Details Modal Start -->
+<ng-template #childmodal let-modal>
+  <!-- Modal Content Start -->
+  <div class="post--details">
+    <!-- Modal Header Start -->
+    <div class="modal-header">
+      <span class="close" aria-label="Close" aria-hidden="true" (click)="modal.dismiss('Cross click')">&times;</span>
+
+      <!-- Logo Start -->
+      <a class="logo" href="#">
+        <div class="logo--img">
+          <img src="assets/img/logo/logo.jpg" class="img-responsive" alt="">
+        </div>
+
+        <div class="logo--content">
+          <h1>JOHN <strong>DOE</strong></h1>
+          <p>On <strong>UX</strong> DESIGN</p>
+        </div>
+      </a>
+      <!-- Logo End -->
+
+      <!-- Social Links Start -->
+      <div class="social-icons">
+        <ul>
+          <li><a href="#">
+              <fa-icon [icon]="faFacebook"></fa-icon>
+            </a></li>
+          <li><a href="#">
+              <fa-icon [icon]="faTwitter"></fa-icon>
+            </a></li>
+          <li><a href="#">
+              <fa-icon [icon]="faGooglePlus"></fa-icon>
+            </a></li>
+          <li><a href="#">
+              <fa-icon [icon]="faLinkedin"></fa-icon>
+            </a></li>
+          <li><a href="#">
+              <fa-icon [icon]="faEnvelope"></fa-icon>
+            </a></li>
+        </ul>
+      </div>
+      <!-- Social Links End -->
+    </div>
+    <!-- Modal Header End -->
+
+    <!-- Modal Body Start -->
+    <div class="modal-body">
+      <div class="row">
+        <div class="col-md-10 col-xs-10 offset-md-1 offset-xs-1 reset-padding post-title">
+          <h2><strong>The</strong> best <strong>UX</strong> technique <strong>in shopping</strong> website</h2>
+          <p>
+            <fa-icon [icon]="faCalendar"></fa-icon> {{this.dataPost.date.$date | date: 'd MMM, y'}}
+          </p>
+        </div>
+
+        <div class="col-md-12">
+          <img src="{{this.dataPost.postImage}}" alt="" class="img-responsive" />
+        </div>
+
+        <div class="col-md-10 col-xs-10 offset-md-1 offset-xs-1 reset-padding post-content"
+          [innerHtml]="this.dataPost.bodyText">
+        </div>
+      </div>
+    </div>
+    <!-- Modal Body End -->
+  </div>
+  <!-- Modal Content End -->
+</ng-template>

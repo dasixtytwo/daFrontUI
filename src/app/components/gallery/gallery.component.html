@@ -9,16 +9,14 @@
     <!-- Gallery Filter Menu Start -->
     <div class="gallery-filter-menu">
       <ul>
-        <li class="active"><button class="btn--default" [class.active]="filterBy==='all'" (click)="filterBy='all'">ALL
-            PROJECTS</button></li>
-        <li><button href="website-item" class="btn--default" [class.active]="filterBy==='react'"
-            (click)="filterBy='react'">REACT</button></li>
-        <li><button href="application-item" class="btn--default" [class.active]="filterBy==='application'"
-            (click)="filterBy='application'">APPLICATION</button></li>
-        <li><button href="application-item" class="btn--default" [class.active]="filterBy==='angular'"
-            (click)="filterBy='angular'">ANGULAR</button></li>
-        <li><button href="application-item" class="btn--default" [class.active]="filterBy==='wordpress'"
-            (click)="filterBy='wordpress'">WORDPRESS</button></li>
+        <li class="active">
+          <button class="btn--default" [class.active]="filterBy === 'all'" (click)="filterBy = 'all'">ALL
+            PROJECTS</button>
+        </li>
+        <li *ngFor="let item of visibleImages | filterUnique">
+          <button class="btn--default upper" [class.active]="filterBy === item"
+            (click)="filterBy = item">{{item}}</button>
+        </li>
       </ul>
     </div>
     <!-- Gallery Filter Menu End -->
@@ -26,8 +24,8 @@
     <!-- Gallery Items Start -->
     <div class="row gallery-items">
       <!-- Gallery Item Start -->
-      <div *ngFor="let image of (visibleImages | imageFilter:filterBy)"
-        class="col-xs-12 col-sm-4 col-md-3 thumbnail gallery-item" data-cat="website-item">
+      <div *ngFor="let image of (visibleImages | filter:filterBy)"
+        class="col-xs-12 col-sm-4 col-md-3 thumbnail gallery-item">
         <img src="{{image.url}}" alt="" />
 
         <div class="gallery-overlay">
@@ -38,24 +36,6 @@
               <p>{{image.description}}</p>
 
               <button class="btn gallery--window" (click)="this.open(image)">View Project</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Gallery Item End -->
-
-      <!-- Gallery Item Start
-      <div class="col-xs-12 col-sm-4 col-md-3 thumbnail gallery-item" data-cat="application-item">
-        <img src="assets/img/gallery/gallery-2.png" alt="" />
-
-        <div class="gallery-overlay">
-          <div class="vc--parent">
-            <div class="vc--child">
-              <h2>PROJECT TITLE</h2>
-
-              <p>Lorem ipsum dolor sit amet con sectetur adipiscing elit sed do.</p>
-
-              <button class="btn gallery--window" (click)="open(website)">View Project</button>
             </div>
           </div>
         </div>
