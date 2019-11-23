@@ -1,17 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Component, OnInit, OnChanges, ViewChild } from '@angular/core';
+import { BlogService } from '@theme/services/blog/blog.service';
+import { ModalBlogComponent } from '@theme/components/modal-blog/modal-blog.component';
+
 import { themeAnimations } from '@theme/animations/index';
-import {
-	faIndent,
-	faCalendar,
-	faEnvelope
-} from '@fortawesome/free-solid-svg-icons';
-import {
-	faFacebook,
-	faTwitter,
-	faGooglePlus,
-	faLinkedin
-} from '@fortawesome/free-brands-svg-icons';
+import { faIndent, faCalendar } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
 	selector: 'app-blog',
@@ -19,25 +11,33 @@ import {
 	styleUrls: ['./blog.component.scss'],
 	animations: themeAnimations
 })
-export class BlogComponent implements OnInit {
-	faIndent = faIndent;
-	faCalendar = faCalendar;
-	faEnvelope = faEnvelope;
-	faFacebook = faFacebook;
-	faTwitter = faTwitter;
-	faGooglePlus = faGooglePlus;
-	faLinkedin = faLinkedin;
+export class BlogComponent implements OnChanges, OnInit {
+	filterBy?: string = 'all';
+	visiblePosts: any[] = [];
 
 	show = true;
 
-	constructor(private modalService: NgbModal) {}
+	// fontawesome icons
+	faIndent = faIndent;
+	faCalendar = faCalendar;
+
+	@ViewChild(ModalBlogComponent, { static: false })
+	childModal: ModalBlogComponent;
+
+	constructor(private blogService: BlogService) {
+		this.visiblePosts = this.blogService.getPosts();
+	}
 
 	open(modalId) {
-		this.modalService.open(modalId, { size: 'lg', backdrop: 'static' });
+		this.childModal.open(modalId);
 	}
 
 	toggleShow() {
 		this.show = !this.show;
+	}
+
+	ngOnChanges() {
+		this.visiblePosts = this.blogService.getPosts();
 	}
 
 	ngOnInit() {}

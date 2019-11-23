@@ -14,11 +14,13 @@
       <!-- Posts Filter Menu Start -->
       <div class="posts-filter-menu" [@openClose]="show ? 'open' : 'closed'">
         <ul>
-          <li><a href="*">All</a></li>
-          <li><a href="ux-design">UX Design</a></li>
-          <li><a href="react">React</a></li>
-          <li><a href="freelancing">Freelancing</a></li>
-          <li><a href="application">Application</a></li>
+          <li class="active">
+            <button class="btn btn-link" [class.active]="filterBy==='all'" (click)="filterBy='all'">All</button>
+          </li>
+          <li *ngFor="let item of visiblePosts | filterUnique">
+            <button class="btn btn-link upper" [class.active]="filterBy === item"
+              (click)="filterBy = item">{{item}}</button>
+          </li>
         </ul>
       </div>
       <!-- Posts Filter Menu End -->
@@ -27,66 +29,24 @@
     <!-- Post Items Start -->
     <div class="row post-items">
       <!-- Post Item Start -->
-      <div class="col-sm-4 col-md-3 post-item" data-cat="application">
-        <!-- Post Description Start -->
-        <div class="post-description">
-          <h2><a [routerLink]="['/home']" (click)="open(website)">LOREM <strong>IPSUM</strong> (UI)
-              <strong>Mobile Apps</strong></a></h2>
-
-          <p class="post-date">
-            <fa-icon [icon]="faCalendar"></fa-icon> <a href="#"> 28 Dec 2019</a>
-          </p>
-
-          <p class="post-description-content">I’m a freelance Web Developer &amp; an all round good guy, building
-            awesome
-            things for the web and mobile. I live in <strong>
-              <div id="Irvine"></div>
-            </strong>, work remotely with seriously cool
-            startups, on seriously cool stuff.</p>
-        </div>
-        <!-- Post Description End -->
-
-        <!-- Post Meta Start -->
-        <div class="post-meta clearfix">
-          <div class="post-meta-img">
-            <a href="#">
-              <img src="assets/img/logo/logo.jpg" alt="" class="img-responsive img-circle" />
-            </a>
-          </div>
-
-          <div class="post-meta-desc">
-            <h3><a href="#">JOHN <strong>DOE</strong></a></h3>
-            <p>On <a href="#"><strong>UX</strong> Design</a></p>
-          </div>
-        </div>
-        <!-- Post Meta End -->
-      </div>
-      <!-- Post Item End -->
-
-      <!-- Post Item Start -->
-      <div class="col-sm-4 col-md-3 post-item" data-cat="freelancing">
+      <div *ngFor="let post of visiblePosts | filter:filterBy" class="col-sm-4 col-md-3 post-item">
         <!-- Post Image Start -->
         <div class="post--img">
           <a href="#postDetails" data-toggle="modal">
-            <img src="assets/img/blog/blog1.jpg" alt="" />
+            <img src="{{post.postImage}}" alt="" />
           </a>
         </div>
         <!-- Post Image End -->
-
         <!-- Post Description Start -->
         <div class="post-description">
-          <h2><a href="#postDetails" data-toggle="modal">User <strong>Experience</strong> (UX)
-              <strong>Design</strong></a>
-          </h2>
+          <h2><a [routerLink]="['/home']" (click)="open(post )">LOREM <strong>IPSUM</strong> (UI)
+              <strong>Mobile Apps</strong></a></h2>
 
           <p class="post-date">
-            <fa-icon [icon]="faCalendar"></fa-icon> <a href="#">28 Dec 2015</a>
+            <fa-icon [icon]="faCalendar"></fa-icon> {{post.date.$date | date: 'd MMM, y'}}
           </p>
 
-          <p class="post-description-content">I’m a freelance UX designer &amp; an all round good guy, building awesome
-            things
-            for the web and mobile. I live in <strong>#Dhaka</strong>, work remotely with seriously cool startups, on
-            seriously cool stuff.</p>
+          <p class="post-description-content" [innerHTML]="post.bodyText | truncate : 207"></p>
         </div>
         <!-- Post Description End -->
 
@@ -99,82 +59,9 @@
           </div>
 
           <div class="post-meta-desc">
-            <h3><a href="#">JOHN <strong>DOE</strong></a></h3>
-            <p>On <a href="#"><strong>UX</strong> Design</a></p>
-          </div>
-        </div>
-        <!-- Post Meta End -->
-      </div>
-      <!-- Post Item End -->
-
-      <!-- Post Item Start -->
-      <div class="col-sm-4 col-md-3 post-item" data-cat="react">
-        <!-- Post Description Start -->
-        <div class="post-description">
-          <h2><a href="#postDetails" data-toggle="modal">LOREM <strong>IPSUM</strong> (UI)
-              <strong>React</strong></a></h2>
-
-          <p class="post-date">
-            <fa-icon [icon]="faCalendar"></fa-icon> <a href="#"> 28 Dec 2019</a>
-          </p>
-
-          <p class="post-description-content">I’m a freelance Web Developer &amp; an all round good guy, building
-            awesome
-            things for the web and mobile. I live in <strong>
-              <div id="Irvine"></div>
-            </strong>, work remotely with seriously cool
-            startups, on seriously cool stuff.</p>
-        </div>
-        <!-- Post Description End -->
-
-        <!-- Post Meta Start -->
-        <div class="post-meta clearfix">
-          <div class="post-meta-img">
-            <a href="#">
-              <img src="assets/img/logo/logo.jpg" alt="" class="img-responsive img-circle" />
-            </a>
-          </div>
-
-          <div class="post-meta-desc">
-            <h3><a href="#">JOHN <strong>DOE</strong></a></h3>
-            <p>On <a href="#"><strong>UX</strong> Design</a></p>
-          </div>
-        </div>
-        <!-- Post Meta End -->
-      </div>
-      <!-- Post Item End -->
-
-      <!-- Post Item Start -->
-      <div class="col-sm-4 col-md-3 post-item" data-cat="angular">
-        <!-- Post Description Start -->
-        <div class="post-description">
-          <h2><a href="#postDetails" data-toggle="modal">LOREM <strong>IPSUM</strong> (UI)
-              <strong>Angular</strong></a></h2>
-
-          <p class="post-date">
-            <fa-icon [icon]="faCalendar"></fa-icon> <a href="#"> 28 Dec 2019</a>
-          </p>
-
-          <p class="post-description-content">I’m a freelance Web Developer &amp; an all round good guy, building
-            awesome
-            things for the web and mobile. I live in <strong>
-              <div id="Irvine"></div>
-            </strong>, work remotely with seriously cool
-            startups, on seriously cool stuff.</p>
-        </div>
-        <!-- Post Description End -->
-
-        <!-- Post Meta Start -->
-        <div class="post-meta clearfix">
-          <div class="post-meta-img">
-            <a href="#">
-              <img src="assets/img/logo/logo.jpg" alt="" class="img-responsive img-circle" />
-            </a>
-          </div>
-
-          <div class="post-meta-desc">
-            <h3><a href="#">JOHN <strong>DOE</strong></a></h3>
-            <p>On <a href="#"><strong>UX</strong> Design</a></p>
+            <h3>JOHN <strong>DOE</strong></h3>
+            <p>On <button class="btn btn-link" [class.active]="filterBy === post.category"
+                (click)="filterBy = post.category"><strong>UX</strong> Design</button></p>
           </div>
         </div>
         <!-- Post Meta End -->
@@ -187,108 +74,6 @@
 
   <!-- Blog Details Start -->
   <!-- Modal Content Start -->
-  <ng-template #website let-modal>
-    <div class="post--details">
-      <!-- Modal Header Start -->
-      <div class="modal-header">
-        <span class="close" aria-label="Close" aria-hidden="true" (click)="modal.dismiss('Cross click')">&times;</span>
-
-        <!-- Logo Start -->
-        <a class="logo" href="#">
-          <div class="logo--img">
-            <img src="assets/img/logo/logo.jpg" class="img-responsive" alt="">
-          </div>
-
-          <div class="logo--content">
-            <h1>JOHN <strong>DOE</strong></h1>
-            <p>On <strong>UX</strong> DESIGN</p>
-          </div>
-        </a>
-        <!-- Logo End -->
-
-        <!-- Social Links Start -->
-        <div class="social-icons">
-          <ul>
-            <li><a href="#">
-                <fa-icon [icon]="faFacebook"></fa-icon>
-              </a></li>
-            <li><a href="#">
-                <fa-icon [icon]="faTwitter"></fa-icon>
-              </a></li>
-            <li><a href="#">
-                <fa-icon [icon]="faGooglePlus"></fa-icon>
-              </a></li>
-            <li><a href="#">
-                <fa-icon [icon]="faLinkedin"></fa-icon>
-              </a></li>
-            <li><a href="#">
-                <fa-icon [icon]="faEnvelope"></fa-icon>
-              </a></li>
-          </ul>
-        </div>
-        <!-- Social Links End -->
-      </div>
-      <!-- Modal Header End -->
-
-      <!-- Modal Body Start -->
-      <div class="modal-body">
-        <div class="row">
-          <div class="col-md-10 col-xs-10 offset-md-1 offset-xs-1 reset-padding post-title">
-            <h2><strong>The</strong> best <strong>UX</strong> technique <strong>in shopping</strong> website</h2>
-            <p>
-              <fa-icon [icon]="faCalendar"></fa-icon> 28 Dec, 2015
-            </p>
-          </div>
-
-          <div class="col-md-12">
-            <img src="assets/img/blog/blog1.jpg" alt="" class="img-responsive" />
-          </div>
-
-          <div class="col-md-10 col-xs-10 offset-md-1 offset-xs-1 reset-padding post-content">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor tempora corporis eaque possimus
-              veritatis, totam cum impedit omnis unde consequatur eveniet, temporibus cupiditate? Excepturi dolor
-              nisi, quibusdam itaque reprehenderit libero.</p>
-
-            <p>Sed augue ipsum, egestas nec, vestibulum et, malesuada adipiscing, dui. Nulla consequat massa quis
-              enim. In ut quam vitae odio lacinia tincidunt. Fusce convallis metus id felis luctus adipiscing. Etiam
-              imperdiet imperdiet orci. Cras risus ipsum, faucibus ut, ullamcorper id, varius ac, leo. Ut a nisl id
-              ante tempus.</p>
-
-            <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam cursus
-              lacinia erat. In hac habitasse platea dictumst. Nullam vel sem. Nullam accumsan lorem in dui. Aenean
-              commodo ligula eget dolor. Nulla sit amet est. Curabitur vestibulum aliquam leo. Phasellus volutpat,
-              metus eget egestas mollis, lacus lacus blandit dui, id egestas quam mauris ut lacus. Suspendisse
-              faucibus..</p>
-
-            <blockquote>
-              <p>Aenean ut eros et nisl sagittis vestibulum. Morbi mattis ullamcorper velit. Etiam vitae tortor. Donec
-                posuere vulputate arcu. Nullam accumsan lorem in dui.</p>
-            </blockquote>
-
-            <p>Suspendisse feugiat. Donec interdum, metus et hendrerit aliquet, dolor diam sagittis ligula, eget
-              egestas libero turpis vel mi. Etiam feugiat lorem non metus. Vivamus quis mi. Donec vitae sapien ut
-              libero venenatis faucibus. Phasellus gravida semper nisi. Duis arcu tortor, suscipit eget, imperdiet
-              nec, imperdiet iaculis, ipsum.</p>
-
-            <ul>
-              <li>Consectetur adipiscing elit vtae elit libero</li>
-              <li>Nullam id dolor id eget lacinia odio posuere erat a ante</li>
-              <li>Integer posuere erat dapibus posuere velit</li>
-            </ul>
-
-            <p>Vestibulum facilisis, purus nec pulvinar iaculis, ligula mi congue nunc, vitae euismod ligula urna in
-              dolor. Fusce fermentum odio nec arcu. In auctor lobortis lacus. Fusce vel dui. Praesent turpis. Fusce
-              fermentum odio nec arcu. Aenean commodo ligula eget dolor. Etiam iaculis nunc ac metus. Praesent blandit
-              laoreet nibh. In hac habitasse platea dictumst. In hac habitasse platea dictumst. Ut varius tincidunt
-              libero. Donec id justo.</p>
-
-            <p><i>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nam at velit
-                nisl. Aenean vitae est nisl. Cras molestie molestie nisl vel imperdiet. Donec vel mi sem.</i></p>
-          </div>
-        </div>
-      </div>
-      <!-- Modal Body End -->
-    </div>
-  </ng-template>
+  <app-modal-blog></app-modal-blog>
   <!-- Modal Content End -->
 </div>

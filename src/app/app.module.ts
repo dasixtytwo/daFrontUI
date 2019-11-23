@@ -3,10 +3,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { RouterModule, Router } from '@angular/router';
 import { AppRoutingModule } from './app-routing/app-routing.module';
+import { DatePipe } from '@angular/common';
 
 import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
 import { NgxPageScrollModule } from 'ngx-page-scroll';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 import { DaParallaxDirective } from '@theme/directives/da-parallax.directive';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BackToTopComponent } from '@theme/components/backtop/back-to-top.component';
@@ -30,7 +31,6 @@ import { ContactComponent } from './components/contact/contact.component';
 		BrowserAnimationsModule,
 		NgxPageScrollCoreModule,
 		NgxPageScrollModule,
-		FontAwesomeModule,
 		RouterModule,
 		NgbModule,
 		AppRoutingModule,
@@ -48,7 +48,7 @@ import { ContactComponent } from './components/contact/contact.component';
 		ContactComponent,
 		BackToTopComponent
 	],
-	providers: [PortfolioService],
+	providers: [PortfolioService, DatePipe],
 	bootstrap: [AppComponent]
 })
 export class AppModule {}

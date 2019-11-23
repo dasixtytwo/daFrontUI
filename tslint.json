@@ -51,6 +51,7 @@
 				"variable-declaration": "nospace"
 			}
 		],
+		"prefer-const": false,
 		"one-variable-per-declaration": false,
 		"no-consecutive-blank-lines": false,
 		"no-console": [true, "debug", "info", "time", "timeEnd", "trace"],

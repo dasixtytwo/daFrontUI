@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges, ViewChild } from '@angular/core';
+import { Component, OnInit, OnChanges, ViewChild } from '@angular/core';
 import { PortfolioService } from '@theme/services/portfolio/portfolio.service';
 import { faFileAlt } from '@fortawesome/free-solid-svg-icons';
 import { ModalBasicComponent } from '@theme/components/modal-basic/modal-basic.component';
@@ -8,7 +8,7 @@ import { ModalBasicComponent } from '@theme/components/modal-basic/modal-basic.c
 	templateUrl: './gallery.component.html',
 	styleUrls: ['./gallery.component.scss']
 })
-export class GalleryComponent implements OnChanges {
+export class GalleryComponent implements OnChanges, OnInit {
 	images: any[];
 	filterBy?: string = 'all';
 	visibleImages: any[] = [];
@@ -29,4 +29,6 @@ export class GalleryComponent implements OnChanges {
 	ngOnChanges() {
 		this.visibleImages = this.portfolioService.getImages();
 	}
+
+	ngOnInit() {}
 }

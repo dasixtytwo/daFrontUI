@@ -19,7 +19,9 @@ export class ModalBasicComponent implements OnInit {
 
 	open(project: any) {
 		this.dataProject = project;
-		this.modalRef = this.modalService.open(this.child, { size: 'lg' });
-		// this.modalRef.result.then(result => {}, () => {});
+		this.modalRef = this.modalService.open(this.child, {
+			size: 'lg',
+			backdrop: 'static'
+		});
 	}
 }

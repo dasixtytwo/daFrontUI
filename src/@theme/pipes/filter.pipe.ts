@@ -1,9 +1,9 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-	name: 'imageFilter'
+	name: 'filter'
 })
-export class ImageFilterPipe implements PipeTransform {
+export class FilterPipe implements PipeTransform {
 	transform(items: any[], criteria: string): any {
 		if (criteria === 'all') {
 			return items;

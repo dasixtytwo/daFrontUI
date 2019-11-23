@@ -177,6 +177,23 @@ p {
 		outline: 0;
 	}
 }
+.btn-link {
+	color: $color_1;
+	text-decoration: none;
+	&:hover {
+		color: $color_primary;
+		text-decoration: none;
+	}
+	&:focus {
+		color: $color_1;
+		box-shadow: none;
+		text-decoration: none;
+		outline: 0;
+	}
+	&.active {
+		color: $color_primary;
+	}
+}
 .ui-datepicker {
 	min-width: 253px;
 	padding: 0;
@@ -965,6 +982,18 @@ body.scrolled {
 				padding: 14px 15px;
 				font-size: 16px;
 				line-height: 20px;
+				text-decoration: none;
+			}
+			button {
+				display: block;
+				color: $color_1;
+				padding: 14px 15px;
+				font-size: 16px;
+				line-height: 20px;
+				text-decoration: none;
+			}
+			button:hover {
+				color: $color_primary;
 				text-decoration: none;
 			}
 		}
