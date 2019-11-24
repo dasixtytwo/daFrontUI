@@ -29,7 +29,7 @@
     <!-- Post Items Start -->
     <div class="row post-items">
       <!-- Post Item Start -->
-      <div *ngFor="let post of visiblePosts | filter:filterBy" class="col-sm-4 col-md-3 post-item">
+      <div *ngFor="let post of visiblePosts | filter:filterBy" class="col-sm-4 col-md-3 post-item" [@inOutAnimation]>
         <!-- Post Image Start -->
         <div class="post--img">
           <a href="#postDetails" data-toggle="modal">
@@ -39,8 +39,7 @@
         <!-- Post Image End -->
         <!-- Post Description Start -->
         <div class="post-description">
-          <h2><a [routerLink]="['/home']" (click)="open(post )">LOREM <strong>IPSUM</strong> (UI)
-              <strong>Mobile Apps</strong></a></h2>
+          <h2><a [routerLink]="['/home']" (click)="open(post )" [innerHTML]="post.title | oddBoldText"></a></h2>
 
           <p class="post-date">
             <fa-icon [icon]="faCalendar"></fa-icon> {{post.date.$date | date: 'd MMM, y'}}

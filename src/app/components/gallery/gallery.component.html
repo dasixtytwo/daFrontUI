@@ -25,7 +25,7 @@
     <div class="row gallery-items">
       <!-- Gallery Item Start -->
       <div *ngFor="let image of (visibleImages | filter:filterBy)"
-        class="col-xs-12 col-sm-4 col-md-3 thumbnail gallery-item">
+        class="col-xs-12 col-sm-4 col-md-3 thumbnail gallery-item" [@inOutAnimation]>
         <img src="{{image.url}}" alt="" />
 
         <div class="gallery-overlay">

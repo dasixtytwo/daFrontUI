@@ -56,5 +56,15 @@ export const themeAnimations = [
 		),
 		transition('open => closed', [animate('0.5s')]),
 		transition('closed => open', [animate('0.5s')])
+	]),
+	trigger('inOutAnimation', [
+		transition(':enter', [
+			style({ height: 0, opacity: 0 }),
+			animate('1s ease-out', style({ height: 400, opacity: 1 }))
+		]),
+		transition(':leave', [
+			style({ height: 400, left: 0, opacity: 1 }),
+			animate('1s ease-in', style({ height: 0, left: 290, opacity: 0 }))
+		])
 	])
 ];

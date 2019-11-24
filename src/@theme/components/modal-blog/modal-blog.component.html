@@ -47,7 +47,7 @@
     <div class="modal-body">
       <div class="row">
         <div class="col-md-10 col-xs-10 offset-md-1 offset-xs-1 reset-padding post-title">
-          <h2><strong>The</strong> best <strong>UX</strong> technique <strong>in shopping</strong> website</h2>
+          <h2 [innerHTML]="this.dataPost.title | oddBoldText"></h2>
           <p>
             <fa-icon [icon]="faCalendar"></fa-icon> {{this.dataPost.date.$date | date: 'd MMM, y'}}
           </p>
