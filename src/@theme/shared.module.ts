@@ -7,6 +7,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FilterUniquePipe } from './pipes/filter-unique.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
 import { TruncatePipe } from './pipes/truncate.pipe';
+import { OddBoldTextPipe } from './pipes/odd-bold-text.pipe';
 
 import { SpinnerComponent } from '@theme/components/spinner/spinner.component';
 import { ModalBasicComponent } from '@theme/components/modal-basic/modal-basic.component';
@@ -21,6 +22,7 @@ import { ModalBlogComponent } from '@theme/components/modal-blog/modal-blog.comp
 		FilterPipe,
 		FilterUniquePipe,
 		TruncatePipe,
+		OddBoldTextPipe,
 		ModalBasicComponent,
 		ModalBlogComponent,
 		FontAwesomeModule
@@ -32,7 +34,8 @@ import { ModalBlogComponent } from '@theme/components/modal-blog/modal-blog.comp
 		ModalBlogComponent,
 		FilterPipe,
 		FilterUniquePipe,
-		TruncatePipe
+		TruncatePipe,
+		OddBoldTextPipe
 	],
 	providers: [],
 	schemas: [NO_ERRORS_SCHEMA]
