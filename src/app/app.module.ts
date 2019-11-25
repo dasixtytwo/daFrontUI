@@ -15,6 +15,7 @@ import { BackToTopComponent } from '@theme/components/backtop/back-to-top.compon
 import { SharedModule } from '@theme/shared.module';
 
 import { PortfolioService } from '@theme/services/portfolio/portfolio.service';
+import { BlogService } from '@theme/services/blog/blog.service';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -24,6 +25,9 @@ import { ServicesComponent } from './components/services/services.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { BlogComponent } from './components/blog/blog.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { EducationComponent } from './components/about/education/education.component';
+import { ExperienceComponent } from './components/about/experience/experience.component';
+import { SkillComponent } from './components/about/skill/skill.component';
 
 @NgModule({
 	imports: [
@@ -46,9 +50,12 @@ import { ContactComponent } from './components/contact/contact.component';
 		GalleryComponent,
 		BlogComponent,
 		ContactComponent,
-		BackToTopComponent
+		BackToTopComponent,
+		EducationComponent,
+		ExperienceComponent,
+		SkillComponent
 	],
-	providers: [PortfolioService, DatePipe],
+	providers: [PortfolioService, BlogService, DatePipe],
 	bootstrap: [AppComponent]
 })
 export class AppModule {}

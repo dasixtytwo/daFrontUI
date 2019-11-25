@@ -12,6 +12,7 @@ import { OddBoldTextPipe } from './pipes/odd-bold-text.pipe';
 import { SpinnerComponent } from '@theme/components/spinner/spinner.component';
 import { ModalBasicComponent } from '@theme/components/modal-basic/modal-basic.component';
 import { ModalBlogComponent } from '@theme/components/modal-blog/modal-blog.component';
+import { MapComponent } from '@theme/components/map/map.component';
 
 @NgModule({
 	imports: [CommonModule, NgbModule, HttpClientModule, FontAwesomeModule],
@@ -25,6 +26,7 @@ import { ModalBlogComponent } from '@theme/components/modal-blog/modal-blog.comp
 		OddBoldTextPipe,
 		ModalBasicComponent,
 		ModalBlogComponent,
+		MapComponent,
 		FontAwesomeModule
 	],
 	declarations: [
@@ -32,6 +34,7 @@ import { ModalBlogComponent } from '@theme/components/modal-blog/modal-blog.comp
 		FilterPipe,
 		ModalBasicComponent,
 		ModalBlogComponent,
+		MapComponent,
 		FilterPipe,
 		FilterUniquePipe,
 		TruncatePipe,
