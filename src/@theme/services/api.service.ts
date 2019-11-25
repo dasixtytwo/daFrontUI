@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
 	providedIn: 'root'
 })
-export class WebRequestService {
+export class ApiService {
 	readonly ROOT_URL;
 
 	constructor(private http: HttpClient) {

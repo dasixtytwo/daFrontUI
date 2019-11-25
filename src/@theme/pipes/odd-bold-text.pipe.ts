@@ -7,7 +7,7 @@ export class OddBoldTextPipe implements PipeTransform {
 	transform(value: any, ...args: any[]): any {
 		const strArray = value.split(' ');
 		const res = [];
-		for (let i = 1; i <= strArray.length; i++) {
+		for (let i = 0; i < strArray.length; i++) {
 			if (i % 2 === 0) {
 				res.push('<strong>' + strArray[i] + '</strong> ');
 			} else {

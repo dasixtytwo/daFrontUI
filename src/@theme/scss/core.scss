@@ -5,7 +5,7 @@ Author: Davide A.
 Email: support@davideagosti.co.uk
 File: core.scss
 **/
-
+@import "~leaflet/dist/leaflet.css";
 @import '~bootstrap/scss/bootstrap';
 
 @import 'variables';
