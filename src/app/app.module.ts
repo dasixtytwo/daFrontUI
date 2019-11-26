@@ -28,6 +28,9 @@ import { ContactComponent } from './components/contact/contact.component';
 import { EducationComponent } from './components/about/education/education.component';
 import { ExperienceComponent } from './components/about/experience/experience.component';
 import { SkillComponent } from './components/about/skill/skill.component';
+import { EducationService } from '@theme/services/education/education.service';
+import { SkillService } from './../@theme/services/skill/skill.service';
+import { ExperienceService } from './../@theme/services/experience/experience.service';
 
 @NgModule({
 	imports: [
@@ -55,7 +58,14 @@ import { SkillComponent } from './components/about/skill/skill.component';
 		ExperienceComponent,
 		SkillComponent
 	],
-	providers: [PortfolioService, BlogService, DatePipe],
+	providers: [
+		PortfolioService,
+		BlogService,
+		EducationService,
+		ExperienceService,
+		SkillService,
+		DatePipe
+	],
 	bootstrap: [AppComponent]
 })
 export class AppModule {}

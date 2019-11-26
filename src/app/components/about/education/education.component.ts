@@ -1,15 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
+import { EducationService } from '@theme/services/education/education.service';
 
 @Component({
-  selector: 'app-education',
-  templateUrl: './education.component.html',
-  styleUrls: ['./education.component.scss']
+	selector: 'app-education',
+	templateUrl: './education.component.html',
+	styleUrls: ['./education.component.scss']
 })
-export class EducationComponent implements OnInit {
+export class EducationComponent implements OnChanges, OnInit {
+	visibleEdu: any[] = [];
 
-  constructor() { }
+	constructor(private eduService: EducationService) {
+		this.visibleEdu = this.eduService.getEdu();
+	}
 
-  ngOnInit() {
-  }
+	ngOnInit() {
+		console.log('Education:', this.visibleEdu);
+	}
 
+	ngOnChanges() {
+		this.visibleEdu = this.eduService.getEdu();
+	}
 }

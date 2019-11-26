@@ -1,39 +1,15 @@
-<h3>EXPERT <strong>IN</strong></h3>
+<h3>SK<strong>ILLS</strong></h3>
 
-<p>Poin dui orci, pretium eget fringilla sit amet, luctus a nisl. Praesent tristique scelerisque sapien at
-  aliquet.</p>
+<p>My Knowledge Level in Design and Web and Mobile Development.</p>
 
 <!-- About Progrees Items Start -->
 <div class="about--progress-items">
   <!-- About Progrees Bar Start -->
-  <h4>JAVASCRIPT</h4>
-
-  <div class="progress">
-    <div class="progress-bar" data-progress="60"><span>60%</span></div>
-  </div>
-  <!-- About Progrees Bar End -->
-
-  <!-- About Progrees Bar Start -->
-  <h4>CSS</h4>
-
-  <div class="progress">
-    <div class="progress-bar" data-progress="90"><span>90%</span></div>
-  </div>
-  <!-- About Progrees Bar End -->
-
-  <!-- About Progrees Bar Start -->
-  <h4>ANGULAR</h4>
-
-  <div class="progress">
-    <div class="progress-bar" data-progress="70"><span>70%</span></div>
-  </div>
-  <!-- About Progrees Bar End -->
-
-  <!-- About Progrees Bar Start -->
-  <h4>REACT</h4>
-
-  <div class="progress">
-    <div class="progress-bar" data-progress="50"><span>50%</span></div>
+  <div *ngFor="let skill of visibleSkill">
+    <h4>{{skill.skillTitle}}</h4>
+    <div class="progress">
+      <div class="progress-bar" data-progress="60"><span>{{skill.skillPercent}}%</span></div>
+    </div>
   </div>
   <!-- About Progrees Bar End -->
 </div>
