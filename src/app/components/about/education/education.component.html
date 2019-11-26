@@ -2,36 +2,18 @@
   <h3><strong>EDU</strong>CATION</h3>
 
   <!-- About Info Item Start -->
-  <div class="about--info-item">
+  <div *ngFor="let edu of visibleEdu" class="about--info-item">
     <div class="row reset-gutter">
       <div class="col-xs-4">
-        <p>2018-2019</p>
-        <h5><strong>UWS UNIVERSITY</strong></h5>
+        <p *ngIf="edu.current">{{edu.from.$date | date: 'd MMM, y'}} - Present</p>
+        <p *ngIf="edu.current === false">{{edu.from.$date | date: 'd MMM, y'}} - {{edu.to.$date | date: 'd MMM, y'}}</p>
+        <h5><strong>{{edu.school}}</strong> {{edu.degree}}</h5>
       </div>
 
       <div class="col-xs-8 about--info-border">
-        <h4><strong>WEB/MOBILE</strong> DEVELOPMENT</h4>
+        <h4 [innerHtml]="edu.fieldOfStudy | oddBoldText"></h4>
 
-        <p>Poin dui orci, pretium eget fringilla sit amet, luctus a nisl. Praesent tristique scelerisque
-          sapien at aliquet.</p>
-      </div>
-    </div>
-  </div>
-  <!-- About Info Item End -->
-
-  <!-- About Info Item Start -->
-  <div class="about--info-item">
-    <div class="row reset-gutter">
-      <div class="col-xs-4">
-        <p>2017-2018</p>
-        <h5><strong>GLASGOW COLLEGE</strong></h5>
-      </div>
-
-      <div class="col-xs-8 about--info-border">
-        <h4><strong>DESIGN</strong> WEB DEVELOPMENT</h4>
-
-        <p>Poin dui orci, pretium eget fringilla sit amet, luctus a nisl. Praesent tristique scelerisque
-          sapien at aliquet.</p>
+        <p>{{edu.description}}</p>
       </div>
     </div>
   </div>
