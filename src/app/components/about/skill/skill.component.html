@@ -6,10 +6,8 @@
 <div class="about--progress-items">
   <!-- About Progrees Bar Start -->
   <div *ngFor="let skill of visibleSkill">
-    <h4>{{skill.skillTitle}}</h4>
-    <div class="progress">
-      <div class="progress-bar" data-progress="60"><span>{{skill.skillPercent}}%</span></div>
-    </div>
+    <da-progress-bar title="{{skill.skillTitle}}" percent="{{skill.skillPercent}}" progress="{{skill.skillPercent}}">
+    </da-progress-bar>
   </div>
   <!-- About Progrees Bar End -->
 </div>

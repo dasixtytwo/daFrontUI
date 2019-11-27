@@ -13,6 +13,8 @@ import { SpinnerComponent } from '@theme/components/spinner/spinner.component';
 import { ModalBasicComponent } from '@theme/components/modal-basic/modal-basic.component';
 import { ModalBlogComponent } from '@theme/components/modal-blog/modal-blog.component';
 import { MapComponent } from '@theme/components/map/map.component';
+import { ProgressBarComponent } from './components/progress-bar/progress-bar.component';
+import { SortDataPipe } from './pipes/sort-data.pipe';
 
 @NgModule({
 	imports: [CommonModule, NgbModule, HttpClientModule, FontAwesomeModule],
@@ -24,9 +26,11 @@ import { MapComponent } from '@theme/components/map/map.component';
 		FilterUniquePipe,
 		TruncatePipe,
 		OddBoldTextPipe,
+		SortDataPipe,
 		ModalBasicComponent,
 		ModalBlogComponent,
 		MapComponent,
+		ProgressBarComponent,
 		FontAwesomeModule
 	],
 	declarations: [
@@ -35,10 +39,12 @@ import { MapComponent } from '@theme/components/map/map.component';
 		ModalBasicComponent,
 		ModalBlogComponent,
 		MapComponent,
+		ProgressBarComponent,
 		FilterPipe,
 		FilterUniquePipe,
 		TruncatePipe,
-		OddBoldTextPipe
+		OddBoldTextPipe,
+		SortDataPipe
 	],
 	providers: [],
 	schemas: [NO_ERRORS_SCHEMA]
