@@ -33,14 +33,15 @@
         <div ngxMasonryItem *ngFor="let post of visiblePosts | filter:filterBy" class="col-sm-4 col-md-3 post-item">
           <!-- Post Image Start -->
           <div class="post--img">
-            <a href="#postDetails" data-toggle="modal">
+            <a [routerLink]="['/home']" (click)="open(post )">
               <img src="{{post.postImage}}" alt="" />
             </a>
           </div>
           <!-- Post Image End -->
           <!-- Post Description Start -->
           <div class="post-description">
-            <h2><a [routerLink]="['/home']" (click)="open(post )" [innerHTML]="post.title | oddBoldText"></a></h2>
+            <h2><a [routerLink]="['/home']" (click)="open(post )"
+                [innerHTML]="post.title | truncate : 30 | oddBoldText "></a></h2>
 
             <p class="post-date">
               <fa-icon [icon]="faCalendar"></fa-icon> {{post.date.$date | date: 'd MMM, y'}}
