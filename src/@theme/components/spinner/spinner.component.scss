@@ -4,7 +4,7 @@
 	height: 100%;
 	width: 100%;
 	position: fixed;
-	z-index: 9999;
+	z-index: 99999;
 }
 
 .loader-bg {
@@ -19,4 +19,9 @@
 .colored-parent,
 .colored > div {
 	background-color: #333;
+}
+
+.center {
+	position: relative;
+	top: 45%;
 }

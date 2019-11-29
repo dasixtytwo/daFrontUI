@@ -1,3 +1,9 @@
+## 0.1.5 (2019-11-29)
+
+Add ngx-masonry package 
+Add Masonry at Gallery and Blog
+fix spinner bug
+
 ## 0.1.4 (2019-11-27)
 
 Fix Education bug
