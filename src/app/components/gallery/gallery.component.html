@@ -24,22 +24,25 @@
     <!-- Gallery Items Start -->
     <div class="row gallery-items">
       <!-- Gallery Item Start -->
-      <div *ngFor="let image of (visibleImages | filter:filterBy)"
-        class="col-xs-12 col-sm-4 col-md-3 thumbnail gallery-item" [@inOutAnimation]>
-        <img src="{{image.url}}" alt="" />
+      <ngx-masonry [useImagesLoaded]="true">
+        <div ngxMasonryItem *ngFor="let image of (visibleImages | filter:filterBy)"
+          class="col-3 col-xs-12 col-sm-4 col-md-3 thumbnail gallery-item">
+          <img src="{{image.url}}" alt="" />
 
-        <div class="gallery-overlay">
-          <div class="vc--parent">
-            <div class="vc--child">
-              <h2>{{image.caption}}</h2>
+          <div class="gallery-overlay">
+            <div class="vc--parent">
+              <div class="vc--child">
+                <h2>{{image.caption}}</h2>
 
-              <p>{{image.description}}</p>
+                <p>{{image.description}}</p>
 
-              <button class="btn gallery--window" (click)="this.open(image)">View Project</button>
+                <button class="btn gallery--window" (click)="this.open(image)">View Project</button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </ngx-masonry>
+
       <!-- Gallery Item End -->
     </div>
     <!-- Gallery Items End -->

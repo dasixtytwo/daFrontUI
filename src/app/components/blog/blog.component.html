@@ -29,42 +29,45 @@
     <!-- Post Items Start -->
     <div class="row post-items">
       <!-- Post Item Start -->
-      <div *ngFor="let post of visiblePosts | filter:filterBy" class="col-sm-4 col-md-3 post-item" [@inOutAnimation]>
-        <!-- Post Image Start -->
-        <div class="post--img">
-          <a href="#postDetails" data-toggle="modal">
-            <img src="{{post.postImage}}" alt="" />
-          </a>
-        </div>
-        <!-- Post Image End -->
-        <!-- Post Description Start -->
-        <div class="post-description">
-          <h2><a [routerLink]="['/home']" (click)="open(post )" [innerHTML]="post.title | oddBoldText"></a></h2>
-
-          <p class="post-date">
-            <fa-icon [icon]="faCalendar"></fa-icon> {{post.date.$date | date: 'd MMM, y'}}
-          </p>
-
-          <p class="post-description-content" [innerHTML]="post.bodyText | truncate : 207"></p>
-        </div>
-        <!-- Post Description End -->
-
-        <!-- Post Meta Start -->
-        <div class="post-meta clearfix">
-          <div class="post-meta-img">
-            <a href="#">
-              <img src="assets/img/logo/logo.jpg" alt="" class="img-responsive img-circle" />
+      <ngx-masonry [useImagesLoaded]="true">
+        <div ngxMasonryItem *ngFor="let post of visiblePosts | filter:filterBy" class="col-sm-4 col-md-3 post-item">
+          <!-- Post Image Start -->
+          <div class="post--img">
+            <a href="#postDetails" data-toggle="modal">
+              <img src="{{post.postImage}}" alt="" />
             </a>
           </div>
+          <!-- Post Image End -->
+          <!-- Post Description Start -->
+          <div class="post-description">
+            <h2><a [routerLink]="['/home']" (click)="open(post )" [innerHTML]="post.title | oddBoldText"></a></h2>
 
-          <div class="post-meta-desc">
-            <h3>JOHN <strong>DOE</strong></h3>
-            <p>On <button class="btn btn-link" [class.active]="filterBy === post.category"
-                (click)="filterBy = post.category"><strong>UX</strong> Design</button></p>
+            <p class="post-date">
+              <fa-icon [icon]="faCalendar"></fa-icon> {{post.date.$date | date: 'd MMM, y'}}
+            </p>
+
+            <p class="post-description-content" [innerHTML]="post.bodyText | truncate : 207"></p>
           </div>
+          <!-- Post Description End -->
+
+          <!-- Post Meta Start -->
+          <div class="post-meta clearfix">
+            <div class="post-meta-img">
+              <a href="#">
+                <img src="assets/img/logo/logo.jpg" alt="" class="img-responsive img-circle" />
+              </a>
+            </div>
+
+            <div class="post-meta-desc">
+              <h3>JOHN <strong>DOE</strong></h3>
+              <p>On <button class="btn btn-link" [class.active]="filterBy === post.category"
+                  (click)="filterBy = post.category"><strong>UX</strong> Design</button></p>
+            </div>
+          </div>
+          <!-- Post Meta End -->
         </div>
-        <!-- Post Meta End -->
-      </div>
+      </ngx-masonry>
+
       <!-- Post Item End -->
 
     </div>

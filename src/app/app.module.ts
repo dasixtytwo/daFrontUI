@@ -7,6 +7,7 @@ import { DatePipe } from '@angular/common';
 
 import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
 import { NgxPageScrollModule } from 'ngx-page-scroll';
+import { NgxMasonryModule } from 'ngx-masonry';
 
 import { DaParallaxDirective } from '@theme/directives/da-parallax.directive';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -41,7 +42,8 @@ import { ExperienceService } from './../@theme/services/experience/experience.se
 		RouterModule,
 		NgbModule,
 		AppRoutingModule,
-		SharedModule
+		SharedModule,
+		NgxMasonryModule
 	],
 	declarations: [
 		AppComponent,
