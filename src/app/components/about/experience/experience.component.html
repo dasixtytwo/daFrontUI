@@ -2,18 +2,20 @@
   <h3><strong>EX</strong>PERIENCE</h3>
 
   <!-- About Info Item Start -->
-  <div *ngFor="let exp of visibleExp | sortData" class="about--info-item">
-    <div class="row no-gutters">
-      <div class="col-4 col-xs-4">
-        <p *ngIf="exp.current">{{exp.from.$date | date: 'MMM y'}} - Present</p>
-        <p *ngIf="exp.current === false">{{exp.from.$date | date: 'MMM y'}} - {{exp.to.$date | date: 'MMM y'}}</p>
-        <h5><strong>{{exp.company}}</strong></h5>
-      </div>
+  <div class="about--slide-item">
+    <div *ngFor="let exp of visibleExp | sortData" class="about--info-item">
+      <div class="row no-gutters">
+        <div class="col-4 col-xs-4">
+          <p *ngIf="exp.current">{{exp.from.$date | date: 'MMM y'}} - Present</p>
+          <p *ngIf="exp.current === false">{{exp.from.$date | date: 'MMM y'}} - {{exp.to.$date | date: 'MMM y'}}</p>
+          <h5><strong>{{exp.company}}</strong></h5>
+        </div>
 
-      <div class="col-8 col-xs-8 about--info-border">
-        <h4 [innerHtml]="exp.title | oddBoldText"></h4>
+        <div class="col-8 col-xs-8 about--info-border">
+          <h4 [innerHtml]="exp.title | oddBoldText"></h4>
 
-        <p>{{exp.description}}</p>
+          <p>{{exp.description}}</p>
+        </div>
       </div>
     </div>
   </div>
