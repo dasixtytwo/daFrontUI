@@ -1,3 +1,8 @@
+## 0.1.6 (2019-11-29)
+
+Add bxslider package 
+Update Edu and Exp component
+
 ## 0.1.5 (2019-11-29)
 
 Add ngx-masonry package 

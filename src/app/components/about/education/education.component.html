@@ -2,22 +2,22 @@
   <h3><strong>EDU</strong>CATION</h3>
 
   <!-- About Info Item Start -->
+  <div class="about--slide-item">
+    <div *ngFor="let edu of visibleEdu | sortData" class="about--info-item">
+      <div class="row no-gutters">
+        <div class="col-4 col-xs-4">
+          <p *ngIf="edu.current">{{edu.from.$date | date: 'MMM y'}} - Present</p>
+          <p *ngIf="edu.current === false">{{edu.from.$date | date: 'MMM y'}} - {{edu.to.$date | date: 'MMM y'}}</p>
+          <h5><strong>{{edu.school}}</strong></h5>
+          <p>{{edu.degree}}</p>
+        </div>
 
-  <div *ngFor="let edu of visibleEdu | sortData" class="about--info-item">
-    <div class="row no-gutters">
-      <div class="col-4 col-xs-4">
-        <p *ngIf="edu.current">{{edu.from.$date | date: 'MMM y'}} - Present</p>
-        <p *ngIf="edu.current === false">{{edu.from.$date | date: 'MMM y'}} - {{edu.to.$date | date: 'MMM y'}}</p>
-        <h5><strong>{{edu.school}}</strong></h5>
-        <p>{{edu.degree}}</p>
-      </div>
-
-      <div class="col-8 col-xs-8 about--info-border">
-        <h4 [innerHtml]="edu.fieldOfStudy | oddBoldText"></h4>
-        <p>{{edu.description}}</p>
+        <div class="col-8 col-xs-8 about--info-border">
+          <h4 [innerHtml]="edu.fieldOfStudy | oddBoldText"></h4>
+          <p>{{edu.description}}</p>
+        </div>
       </div>
     </div>
   </div>
-
   <!-- About Info Item End -->
 </div>
