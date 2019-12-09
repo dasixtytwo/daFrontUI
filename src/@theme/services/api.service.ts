@@ -18,4 +18,24 @@ export class ApiService {
 	post(uri: string, payload: Object) {
 		return this.http.post(`${this.ROOT_URL}/${uri}`, payload);
 	}
+
+	sendContact(
+		fullname: string,
+		email: string,
+		subject: string,
+		message: string
+	) {
+		return this.http.post(
+			`${this.ROOT_URL}/mails/sendcontact`,
+			{
+				fullname,
+				email,
+				subject,
+				message
+			},
+			{
+				observe: 'response'
+			}
+		);
+	}
 }

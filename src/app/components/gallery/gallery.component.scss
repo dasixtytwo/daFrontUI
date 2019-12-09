@@ -5,3 +5,9 @@
 .upper {
 	text-transform: uppercase;
 }
+
+.gallery-filter-menu li button:hover,
+.gallery-filter-menu li button.active {
+	color: #fff;
+	background-color: #303030;
+}
