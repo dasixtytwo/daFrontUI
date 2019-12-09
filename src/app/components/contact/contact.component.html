@@ -52,8 +52,8 @@
         <div class="contact--form">
           <div class="contact-form-status"></div>
 
-          <form name="form" (ngSubmit)="onHandleContact(fullname.value, email.value, subject.value, message.value)"
-            #f="ngForm">
+          <form name="form" #f="ngForm"
+            (ngSubmit)="onHandleContact(f, fullname.value, email.value, subject.value, message.value)">
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
@@ -79,7 +79,7 @@
               <textarea name="message" class="form-control" rows="9" placeholder="Message" [(ngModel)]="model.message"
                 #message="ngModel" message></textarea>
             </div>
-
+            <flash-messages></flash-messages>
             <input type="submit" value="SEND" class="submit-btn btn--primary">
           </form>
         </div>

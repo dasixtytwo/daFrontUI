@@ -5,6 +5,7 @@ import { RouterModule, Router } from '@angular/router';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { DatePipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { FlashMessagesModule } from 'angular2-flash-messages';
 
 import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
 import { NgxPageScrollModule } from 'ngx-page-scroll';
@@ -39,6 +40,7 @@ import { ExperienceService } from './../@theme/services/experience/experience.se
 		BrowserModule,
 		BrowserAnimationsModule,
 		FormsModule,
+		FlashMessagesModule.forRoot(),
 		NgxPageScrollCoreModule,
 		NgxPageScrollModule,
 		RouterModule,

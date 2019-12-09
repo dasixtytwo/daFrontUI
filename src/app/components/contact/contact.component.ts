@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { HttpResponse } from '@angular/common/http';
+import { NgForm } from '@angular/forms';
+import { FlashMessagesService } from 'angular2-flash-messages';
 import { MailService } from '@theme/services/mail/mail.service';
 import {
 	faHome,
@@ -35,11 +37,15 @@ export class ContactComponent implements OnInit {
 
 	model: any = {};
 
-	constructor(private mailService: MailService) {}
+	constructor(
+		private mailService: MailService,
+		private flashMessages: FlashMessagesService
+	) {}
 
 	ngOnInit() {}
 
 	onHandleContact(
+    f: NgForm,
 		fullname: string,
 		email: string,
 		subject: string,
@@ -52,11 +58,20 @@ export class ContactComponent implements OnInit {
 					if (res.status === 200) {
 						// we have logged in successfully
 						console.log('Message sent!');
+						this.flashMessages.show('Your message succesfully submitted', {
+							cssClass: 'alert-success',
+							timeout: 3000
+						});
+            f.reset(); // or form.resetForm();
 					}
 					console.log(res);
 				},
 				error => {
 					this.errorMsg = error.error;
+					this.flashMessages.show('Something went wrong', {
+						cssClass: 'alert-danger',
+						timeout: 3000
+					});
 					console.log('Error occured: ', this.errorMsg);
 				}
 			);
