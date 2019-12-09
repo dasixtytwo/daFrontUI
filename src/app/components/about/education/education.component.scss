@@ -1,1 +1,74 @@
+/* 4.3. ABOUT INFO ITEM */
+.about--info-wrapper {
+	padding: 30px;
+	padding-bottom: 10px;
+	background-color: #fff;
+	box-shadow: 0 0 2px #e9e9e9;
+}
 
+#about .about--info-wrapper h3 {
+	margin-bottom: 9px;
+}
+
+.about--info-wrapper .bx-wrapper {
+	border: 0;
+	box-shadow: none;
+	margin: 0px auto;
+}
+
+.about--info-wrapper {
+	padding-bottom: 10px;
+}
+
+.about--info-items {
+	overflow: hidden;
+}
+
+.about--info-item {
+	padding-top: 15px;
+}
+
+.about--info-border {
+	padding-bottom: 15px;
+	border-bottom: 1px solid #e9e9e9;
+	transition: border-color .25s;
+}
+
+.about--info-wrapper
+	> .about--info-items
+	> .about--info-item:nth-child(3) .about--info-border {
+	border-color: transparent;
+}
+
+.about--info-items [aria-hidden="true"]
+	+ [aria-hidden="false"]
+	+ [aria-hidden="false"]
+	+ [aria-hidden="false"] .about--info-border,
+.about--info-items [aria-hidden="true"]
+	+ [aria-hidden="false"]
+	+ [aria-hidden="false"]
+	+ [aria-hidden="true"] .about--info-border,
+.about--info-items [aria-hidden="true"]
+	+ [aria-hidden="false"]
+	+ [aria-hidden="true"]
+	+ [aria-hidden="true"] .about--info-border {
+	border-bottom-color: transparent;
+}
+
+#about .about--info-item p {
+	margin: 0 auto 8px;
+}
+
+#about .about--info-item p:last-child {
+	margin-bottom: 0;
+}
+
+.about--info-item h4 {
+	margin-bottom: 0;
+	padding-right: 10px;
+}
+
+.about--info-item h5 {
+	margin: 0 0 8px;
+	font-size: 14px;
+}

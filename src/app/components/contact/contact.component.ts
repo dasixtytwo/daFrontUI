@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpResponse } from '@angular/common/http';
+import { MailService } from '@theme/services/mail/mail.service';
 import {
 	faHome,
 	faPhone,
@@ -19,6 +21,8 @@ import {
 	styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent implements OnInit {
+	public errorMsg;
+
 	faHome = faHome;
 	faPhone = faPhone;
 	faEnvelope = faEnvelope;
@@ -29,7 +33,32 @@ export class ContactComponent implements OnInit {
 	faLinkedin = faLinkedin;
 	faRss = faRss;
 
-	constructor() {}
+	model: any = {};
+
+	constructor(private mailService: MailService) {}
 
 	ngOnInit() {}
+
+	onHandleContact(
+		fullname: string,
+		email: string,
+		subject: string,
+		message: string
+	) {
+		this.mailService
+			.sendContactMail(fullname, email, subject, message)
+			.subscribe(
+				(res: HttpResponse<any>) => {
+					if (res.status === 200) {
+						// we have logged in successfully
+						console.log('Message sent!');
+					}
+					console.log(res);
+				},
+				error => {
+					this.errorMsg = error.error;
+					console.log('Error occured: ', this.errorMsg);
+				}
+			);
+	}
 }
