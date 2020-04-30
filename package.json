@@ -33,7 +33,7 @@
 		"bootstrap": "^4.3.1",
 		"bxslider": "^4.2.14",
 		"express": "^4.17.1",
-		"jquery": "^3.4.1",
+		"jquery": "^3.5.0",
 		"leaflet": "^1.6.0",
 		"ngx-masonry": "^1.1.4",
 		"ngx-owl-carousel-o": "^2.0.1",
